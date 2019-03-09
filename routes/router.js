@@ -15,8 +15,13 @@ const router = express.Router()
 
 // Manage top-level request first
 router.get('/', (req, res, next) => {
-  console.log('Request to /')
+  console.log('Request to /index.html')
   res.sendFile(path.join(__dirname, '../public/index.html'))
+})
+
+router.get('/newpage', (req, res, next) => {
+  console.log('Request to /akhil.html')
+  res.sendFile(path.join(__dirname, '../public/akhil.html'))
 })
 
 // Defer path requests to a particular controller
